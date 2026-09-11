@@ -59,15 +59,6 @@ function findProductById(products, id) {
   return products.find((product) => product.id === id);
 }
 
-function findProductByStock(products) {
-  return products.filter((product) => product.stock < 10);
-}
-function updateStock(products, id, newStock) {
-  return products.map((p) => (p.id === id ? { ...p, stock: newStock } : p));
-}
+const product = findProductById(products, 3);
 
-console.log(findProductById(products, 25));
-console.log(findProductByStock(products));
-
-const updatedProducts = updateStock(products, 25, 20);
-console.log(updatedProducts);
+console.log(product);

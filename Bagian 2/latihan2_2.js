@@ -16,58 +16,25 @@ const products = [
   { id: 15, title: "Hard Drive", price: 110, category: "storage", stock: 11 },
   { id: 16, title: "SSD", price: 150, category: "storage", stock: 13 },
   { id: 17, title: "Flash Disk", price: 20, category: "storage", stock: 30 },
-  {
-    id: 18,
-    title: "Power Bank",
-    price: 40,
-    category: "accessories",
-    stock: 16,
-  },
+  { id: 18, title: "Power Bank", price: 40, category: "accessories", stock: 16 },
   { id: 19, title: "Charger", price: 15, category: "accessories", stock: 22 },
   { id: 20, title: "Cable USB", price: 10, category: "accessories", stock: 35 },
   { id: 21, title: "Gaming PC", price: 2000, category: "computer", stock: 2 },
   { id: 22, title: "VR Headset", price: 600, category: "gaming", stock: 5 },
   { id: 23, title: "Controller", price: 60, category: "gaming", stock: 17 },
-  {
-    id: 24,
-    title: "Keyboard Gaming",
-    price: 90,
-    category: "gaming",
-    stock: 12,
-  },
+  { id: 24, title: "Keyboard Gaming", price: 90, category: "gaming", stock: 12 },
   { id: 25, title: "Mouse Gaming", price: 70, category: "gaming", stock: 19 },
   { id: 26, title: "Projector", price: 700, category: "office", stock: 6 },
   { id: 27, title: "Scanner", price: 180, category: "office", stock: 8 },
-  {
-    id: 28,
-    title: "Laptop Stand",
-    price: 35,
-    category: "accessories",
-    stock: 21,
-  },
+  { id: 28, title: "Laptop Stand", price: 35, category: "accessories", stock: 21 },
   { id: 29, title: "Cooling Fan", price: 45, category: "computer", stock: 10 },
-  {
-    id: 30,
-    title: "Graphics Card",
-    price: 1000,
-    category: "computer",
-    stock: 3,
-  },
+  { id: 30, title: "Graphics Card", price: 1000, category: "computer", stock: 3 },
 ];
 
-function findProductById(products, id) {
-  return products.find((product) => product.id === id);
-}
-
-function findProductByStock(products) {
+function findLowStockProducts(products) {
   return products.filter((product) => product.stock < 10);
 }
-function updateStock(products, id, newStock) {
-  return products.map((p) => (p.id === id ? { ...p, stock: newStock } : p));
-}
 
-console.log(findProductById(products, 25));
-console.log(findProductByStock(products));
+const lowStockProducts = findLowStockProducts(products);
 
-const updatedProducts = updateStock(products, 25, 20);
-console.log(updatedProducts);
+console.log(lowStockProducts);
